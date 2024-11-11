@@ -23,94 +23,42 @@
 			width: 100%;
 			display: block;
 		}
-		.head {
+		.container {
 			height: 100vh; /* Ocupa toda la altura de la pantalla */
-			background-image: url('Sin título.png');
-		    background-size: cover; /* La imagen cubre todo el div */
-		    background-position: center; /* Centra la imagen */
-		    background-repeat: no-repeat; /* Evita que la imagen se repita */
-		    margin: 0px; /* Elimina el margen entre los contenedores */
-			padding: 0px;
+			display: flex;
+			flex-direction: column; /* Los elementos se apilan verticalmente */
+	  		background-image: url('Sin título.png');
+	  		background-size: cover; /* La imagen cubre todo el div */
+	  		background-position: center; /* Centra la imagen */
+	  		background-repeat: no-repeat; /* Evita que la imagen se repita */
 			flex-direction: column; /* Apila los elementos verticalmente */
 			align-items: center; /* Centrado vertical */
 			display: flex;
 			justify-content: center; /* Centrado horizontal */
-			text-align: center;
+			text-align: center;	
 		}
-		h1 {
-		    font-size: 5em;
-		    font-weight: ;
-		    background: linear-gradient(to right, #000, #000); /* Degradado de rojo a dorado */
-		    -webkit-background-clip: text;
-		    color: transparent;
-		    background-clip: text;
-		    margin: 0; /* Elimina el margen entre los contenedores */
-			padding: 0px;
+		.container div {
+			margin-bottom: 30px; /* Espacio entre los elementos */
+	  		background: linear-gradient(to right, #AA0000, #F60000, #F6F10A); /* Degradado de rojo a dorado */
+	  		-webkit-background-clip: text;
+	  		color: transparent;
+	  		background-clip: text;
             text-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);
-		  }
-  		h2 {
-  		    font-size: 3em;
-  		    font-weight: ;
-  		    background: linear-gradient(to right, #000, #000); /* Degradado de rojo a dorado */
-  		    -webkit-background-clip: text;
-  		    color: transparent;
-  		    background-clip: text;
-		    margin: 0; /* Elimina el margen entre los contenedores */
-			padding: 0px;
-              text-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);
-  		  }
-    		h3 {
-    		    font-size: 1em;
-    		    font-weight: ;
-    		    background: linear-gradient(to right, #000, #000); /* Degradado de rojo a dorado */
-    		    -webkit-background-clip: text;
-    		    color: transparent;
-    		    background-clip: text;
-			    margin: 2; /* Elimina el margen entre los contenedores */
-				padding: 0px;
-                text-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);
-    		  }
-			  
-			  .container {
-			height: 100vh; /* Ocupa toda la altura de la pantalla */
-			      display: flex;
-			      flex-direction: column; /* Los elementos se apilan verticalmente */
-	  			background-image: url('Sin título.png');
-	  		    background-size: cover; /* La imagen cubre todo el div */
-	  		    background-position: center; /* Centra la imagen */
-	  		    background-repeat: no-repeat; /* Evita que la imagen se repita */
-				flex-direction: column; /* Apila los elementos verticalmente */
-				align-items: center; /* Centrado vertical */
-				display: flex;
-				justify-content: center; /* Centrado horizontal */
-				text-align: center;
-				
-			    }
-			    .container div {
-			      margin-bottom: 30px; /* Espacio entre los elementos */
-	  		    background: linear-gradient(to right, #AA0000, #F60000, #F6F10A); /* Degradado de rojo a dorado */
-	  		    -webkit-background-clip: text;
-	  		    color: transparent;
-	  		    background-clip: text;
-                text-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);
-			    }
-				.a {
-					font-size: 65px;
-				}
-				.b {
-					font-size: 25px;
-				}
+		}
+		.a {
+			font-size: 65px;
+		}
+		.b {
+			font-size: 25px;
+		}
     </style>
 </head>
 <body>
-    
 	<div class="container">
 	    <div class="a">Desktop Environment</div>
 	    <div class="b">Designed by Yuri Ulyanov</div>
-	  </div>
-	  
-	  
-	  
+	</div>
+
 	<div class="desktop">
 		<div class="screenshot">
 			<img src="Sin título 3.png">
