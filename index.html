@@ -36,29 +36,27 @@
 			align-items: center; /* Centrado vertical */
 			display: flex;
 			justify-content: center; /* Centrado horizontal */
-			text-align: center;	
+			text-align: center;
+			
 		}
 		
 		.container div {
 			margin-bottom: 30px; /* Espacio entre los elementos */
-	  		
             text-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);
+	  		background: linear-gradient(to right, #F60000, #F6F10A); /* Degradado de rojo a dorado */
+	  		-webkit-background-clip: text;
+	  		color: transparent;
+	  		background-clip: text;
 		}
 		
 		.a {
 			font-size: 65px;
-	  		background: linear-gradient(to right, #AA0000, #F60000, #F6F10A); /* Degradado de rojo a dorado */
-	  		-webkit-background-clip: text;
-	  		color: transparent;
-	  		background-clip: text;
+	  		
 		}
 		
 		.b {
 			font-size: 22px;
-	  		background: linear-gradient(to right, #AA0000, #F60000, #F6F10A); /* Degradado de rojo a dorado */
-	  		-webkit-background-clip: text;
-	  		color: transparent;
-	  		background-clip: text;
+	  		
 		}
 		
 		.down {
@@ -77,20 +75,67 @@
           /*box-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);*/
 		  text-shadow: 0 0px 15px rgba(0, 0, 0, 0.5);
 	    }
+		
+        /* Estilo general del botón */
+        .btn-bajar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+			background: linear-gradient(to right, #8157E8, #5C5C96);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: bounce 1.5s infinite;
+            transition: opacity 0.3s ease;
+			opacity: 1; /* 50% de opacidad */
+			width: 75px;
+			height: 75px;
+        }
+
+        /* Animación de rebote */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translate(-50%, 0);
+            }
+            40% {
+                transform: translate(-50%, -10px);
+            }
+            60% {
+                transform: translate(-50%, -5px);
+            }
+        }
+
+        /* Estilo para ocultar el botón */
+        .btn-bajar.oculto {
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
+	
 	<div class="container">
 	    <div class="a">Desktop Environment</div>
 	    <div class="b">Designed by Yuri Ulyanov</div>
 	</div>
 	
+    <!-- Botón con flecha hacia abajo -->
+    <button class="btn-bajar" id="btnBajar" onclick="scrollToBottom()">↓</button>
+	
 	<div class="desktop">
 		<div class="screenshot">
-			<img src="desk04.png">
+			<img src="desk04.png" title="titulo">
 		</div>
 		<div class="screenshot">
-			<img src="desk03.png" width="200" data-tooltip="Black Hole">
+			<img src="desk03.png" data-tooltip="Black Hole">
 		</div>
 		<div class="screenshot">
 			<img src="desk02.png" width="300" data-tooltip="Maze">
@@ -101,6 +146,26 @@
 	</div>
 	
 	<div class="tooltip" id="tooltip"></div>
+	
+    <!-- JavaScript para desplazamiento y ocultar el botón -->
+    <script>
+        const btnBajar = document.getElementById('btnBajar');
+
+        // Función para desplazar hacia abajo
+        function scrollToBottom() {
+            document.getElementById("final").scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Detectar el desplazamiento de la página
+        window.addEventListener('scroll', () => {
+            // Si el usuario se ha desplazado hacia abajo, ocultar el botón
+            if (window.scrollY > 100) {  // Cambia 100 según la altura a la que quieres que desaparezca
+                btnBajar.classList.add('oculto');
+            } else {
+                btnBajar.classList.remove('oculto');
+            }
+        });
+    </script>
 <!--
 <script>
 	const tooltip = document.getElementById("tooltip");
