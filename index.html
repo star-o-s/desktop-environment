@@ -82,8 +82,9 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-			background: linear-gradient(to right, #fff, #fff);
-            color: black;
+		    background: none; /* Quita el fondo del botón */
+			/*background: linear-gradient(to right, #fff, #fff);*/
+            color: white;
             border: none;
             padding: 15px;
             border-radius: 50%;
@@ -92,10 +93,10 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 0px 8px rgba(0, 0, 0, 0.2);
             animation: bounce 1.5s infinite;
             transition: opacity 0.3s ease;
-			opacity: 0.9; /* 50% de opacidad */
+			opacity: 1; /* 50% de opacidad */
 			width: 75px;
 			height: 75px;
         }
@@ -118,6 +119,7 @@
             opacity: 0;
             pointer-events: none;
         }
+		
     </style>
 </head>
 <body>
@@ -132,7 +134,7 @@
 	
 	<div class="desktop">
 		<div class="screenshot">
-			<img src="desk04.png">
+			<img src="desk04.png" class="contenedor-imagen" data-title="Título sobre la imagen">
 		</div>
 		<div class="screenshot">
 			<img src="desk03.png" data-tooltip="Black Hole">
