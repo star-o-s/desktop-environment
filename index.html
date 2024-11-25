@@ -17,6 +17,7 @@
 		
 		.screenshot {
 		    margin: 0; /* Elimina el margen entre los contenedores */
+			position: relative; /* Necesario para posicionar el titulo sobre la imagen */
 		}
 		
 		.screenshot img {
@@ -28,7 +29,8 @@
 			height: 100vh; /* Ocupa toda la altura de la pantalla */
 			display: flex;
 			flex-direction: column; /* Los elementos se apilan verticalmente */
-	  		background-image: url('background.png');
+	  		/*background-image: url('background.png');*/
+			background: linear-gradient(135deg, #31B1DF, #2175D5);
 	  		background-size: cover; /* La imagen cubre todo el div */
 	  		background-position: center; /* Centra la imagen */
 	  		background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -43,7 +45,7 @@
 		.container div {
 			margin-bottom: 30px; /* Espacio entre los elementos */
             text-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);
-	  		background: linear-gradient(to right, #F60000, #F6F10A); /* Degradado de rojo a dorado */
+	  		background: linear-gradient(to right, #F60000, #F6F10A); /* Degradado */
 	  		-webkit-background-clip: text;
 	  		color: transparent;
 	  		background-clip: text;
@@ -103,6 +105,43 @@
             pointer-events: none;
         }
 		
+		
+		/*titulos*/
+		.image-name {
+		    position: absolute; /* Posición relativa a su contenedor padre */
+			top: 5%;
+		    left: 50%; /* Centra horizontalmente */
+		    transform: translateX(-50%); /* Asegura el centrado completo */
+		    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+		    color: #0FB4EF; /* Texto blanco */
+		    padding: 20px 50px; /* Espaciado alrededor del texto */
+		    border-radius: 25px; /* Bordes redondeados */
+		    opacity: 0; /* Inicialmente oculto */
+		    transition: opacity 0.3s ease; /* Animación para que aparezca suavemente */
+		    pointer-events: none; /* Evita que interfiera con el puntero */
+			box-shadow: 0 0px 12px rgba(0, 0, 0, 0.3);
+			font-size: 15px;
+			
+			/*background: linear-gradient(135deg, #31B1DF, #2175D5);*/
+		}
+
+		.screenshot:hover .image-name {
+		    opacity: 1; /* Muestra el texto al pasar el cursor */
+
+		    animation: hideText 1.5s forwards; /* Activa la animación al pasar el cursor */
+		}
+		
+		@keyframes hideText {
+		    0% {
+		        opacity: 1;
+		    }
+			70% {
+			    opacity: 1; /* Mantén visible por el 70% del tiempo */
+			    }
+		    100% {
+		        opacity: 0;
+		    }
+		}
     </style>
 </head>
 <body>
@@ -117,19 +156,25 @@
 	
 	<div class="desktop">
 		<div class="screenshot">
-			<img src="desk04.png">
+			<img src="desk04.png" alt="Escritorio 4">
+        	<div class="image-name">Fox</div>
 		</div>
 		<div class="screenshot">
-			<img src="desk03.png">
+			<img src="desk03.png" alt="Escritorio 3">
+        	<div class="image-name">Wormhole</div>
 		</div>
 		<div class="screenshot">
-			<img src="desk02.png">
+			<img src="desk02.png" alt="Escritorio 2">
+        	<div class="image-name">Maze</div>
 		</div>
 		<div class="screenshot">
-			<img src="desk01.png">
+			<img src="desk01.png" alt="Escritorio 1">
+        	<div class="image-name">Black pupils</div>
 		</div>
 		<div class="screenshot">
-			<img src="desk00.png">
+			<img src="desk00.png" alt="Escritorio 0">
+        	<div class="image-name">starOs</div>
+		</div>
 	</div>
 	
 	<div class="tooltip" id="tooltip"></div>
