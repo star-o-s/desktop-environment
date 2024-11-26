@@ -109,20 +109,26 @@
 		/*titulos*/
 		.image-name {
 		    position: absolute; /* Posición relativa a su contenedor padre */
-			top: 0px;
+			width: 150px;
+			height: 150px;
+			top: 41%;
 		    left: 50%; /* Centra horizontalmente */
 		    transform: translateX(-50%); /* Asegura el centrado completo */
 		    /*background: rgba(150, 150, 150, 0.4); /* Fondo semi-transparente */
 		    color: white; /* Texto blanco */
-		    padding: 40px 150px; /* Espaciado alrededor del texto */
-		    border-radius: 0px 25px 25px 25px; /* Bordes redondeados */
+		    padding: 10px; /* Espaciado alrededor del texto */
+		    border-radius: 100%; /* Bordes redondeados */
 		    opacity: 0; /* Inicialmente oculto */
 		    transition: opacity 0.3s ease; /* Animación para que aparezca suavemente */
 		    pointer-events: none; /* Evita que interfiera con el puntero */
 			box-shadow: 0 0px 12px rgba(0, 0, 0, 0.3);
 			font-size: 18px;
-			/*background: linear-gradient(rgba(49, 177, 223, 0.7), rgba(33, 117, 213, 0.7));*/
-			background: linear-gradient(135deg, #31B1DF, #2175D5);
+			background: linear-gradient(rgba(49, 177, 223, 0.9), rgba(33, 117, 213, 0.9));
+			/*background: linear-gradient(135deg, #31B1DF, #2175D5);*/
+			text-align: center; 
+			justify-content: center; /* Centrar horizontalmente */
+			      align-items: center; /* Centrar verticalmente */
+				  display: flex; 
 		}
 
 		.screenshot:hover .image-name {
@@ -169,7 +175,7 @@
 		</div>
 		<div class="screenshot">
 			<img src="desk01.png">
-        	<div class="image-name">Black pupils</div>
+        	<div class="image-name">Many Pupils</div>
 		</div>
 		<div class="screenshot">
 			<img src="desk00.png">
